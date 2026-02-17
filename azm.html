@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مصادر تحدي عزم 1.0 | Azm Challenge Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --azm-purple:   #3D1A6E;
+  --azm-purple2:  #5B2D9E;
+  --azm-light:    #F0EAF9;
+  --azm-border:   #DDD3F0;
+  --miro:         #F7C600;
+  --miro-bg:      #FFF8DC;
+  --text:         #1A1A2E;
+  --text-muted:   #6B6B8A;
+  --bg:           #FAFAFA;
+  --card-bg:      #FFFFFF;
+  --red:          #C62828;
+}
+
+body { font-family:'IBM Plex Sans Arabic','Readex Pro',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; }
+
+/* Header */
+header { position:sticky; top:0; z-index:100; background:#fff; border-bottom:2px solid var(--azm-purple); box-shadow:0 2px 12px rgba(61,26,110,.08); }
+.hdr { max-width:1400px; margin:0 auto; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.logo { display:flex; align-items:center; gap:.9rem; }
+.logo-gem { display:none; }
+.logo h1 { font-size:1.3rem; font-weight:700; color:var(--azm-purple); letter-spacing:-.02em; }
+.logo p { font-size:.72rem; color:var(--text-muted); font-weight:500; }
+nav { display:flex; gap:.5rem; flex-wrap:wrap; }
+nav a { color:var(--text-muted); text-decoration:none; font-weight:600; font-size:.82rem; padding:.35rem .8rem; border-radius:6px; transition:all .25s; border:1px solid transparent; }
+nav a:hover { color:var(--azm-purple); background:var(--azm-light); border-color:var(--azm-border); }
+
+/* Hero */
+.hero { background:linear-gradient(135deg, var(--azm-purple) 0%, var(--azm-purple2) 100%); color:#fff; text-align:center; padding:4rem 2rem 3rem; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.hero-inner { position:relative; max-width:700px; margin:0 auto; }
+.hero h2 { font-size:clamp(2rem,5vw,3.2rem); font-weight:700; line-height:1.15; margin-bottom:.75rem; letter-spacing:-.02em; }
+.hero p { font-size:1.05rem; opacity:.85; max-width:500px; margin:0 auto 2rem; }
+.stats { display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; margin-top:2rem; }
+.stat-box { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:.85rem 1.75rem; backdrop-filter:blur(10px); }
+.stat-n { font-size:2rem; font-weight:700; display:block; }
+.stat-l { font-size:.78rem; opacity:.8; margin-top:.15rem; }
+
+/* Main */
+main { max-width:1400px; margin:0 auto; padding:3rem 2rem 4rem; }
+.section { margin-bottom:4rem; opacity:0; animation:fiu .7s ease forwards; }
+.section:nth-child(1){animation-delay:.05s}.section:nth-child(2){animation-delay:.1s}
+.section:nth-child(3){animation-delay:.15s}.section:nth-child(4){animation-delay:.2s}
+.section:nth-child(5){animation-delay:.25s}.section:nth-child(6){animation-delay:.3s}
+.section:nth-child(7){animation-delay:.35s}
+@keyframes fiu { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.sec-hdr { display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; padding-bottom:.85rem; border-bottom:2px solid var(--azm-border); }
+.sec-ico { display:none; }
+.sec-ttl h3 { font-size:1.4rem; font-weight:700; color:var(--azm-purple); margin-bottom:.12rem; }
+.sec-ttl p { color:var(--text-muted); font-size:.86rem; }
+
+/* Cards */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(295px,1fr)); gap:1.3rem; }
+
+.card { background:#fff; border:1.5px solid var(--azm-border); border-radius:14px; padding:1.4rem; transition:all .25s; position:relative; overflow:hidden; }
+.card:hover { transform:translateY(-3px); border-color:var(--azm-purple); box-shadow:0 6px 24px rgba(61,26,110,.12); }
+.card.miro { border-color:#E8D96A; }
+.card.miro:hover { border-color:var(--miro); box-shadow:0 6px 24px rgba(247,198,0,.18); }
+
+.miro-badge { display:inline-flex; align-items:center; gap:.3rem; background:var(--miro-bg); border:1px solid #E8D96A; color:#7A5F00; font-size:.72rem; font-weight:700; padding:.18rem .55rem; border-radius:20px; margin-bottom:.7rem; }
+
+.c-hdr { display:flex; align-items:flex-start; gap:.85rem; margin-bottom:.85rem; }
+.c-ico { font-size:1.25rem; width:40px; height:40px; display:flex; align-items:center; justify-content:center; background:var(--azm-light); border-radius:9px; flex-shrink:0; }
+.c-ttl h4 { font-size:1rem; font-weight:700; color:var(--text); margin-bottom:.15rem; }
+.c-ttl .cat { font-size:.74rem; color:var(--azm-purple2); font-weight:600; }
+
+.c-desc { color:var(--text-muted); font-size:.875rem; margin-bottom:.8rem; line-height:1.65; }
+.c-tools { font-size:.8rem; color:var(--text-muted); margin-bottom:.8rem; padding:.6rem .75rem; background:var(--azm-light); border-radius:7px; border-right:3px solid var(--azm-purple); }
+
+.links { display:flex; flex-wrap:wrap; gap:.4rem; }
+.btn { display:inline-flex; align-items:center; gap:.35rem; text-decoration:none; font-weight:600; font-size:.8rem; padding:.38rem .85rem; border-radius:7px; transition:all .25s; }
+.btn-p { color:var(--azm-purple); background:var(--azm-light); border:1px solid var(--azm-border); }
+.btn-p:hover { background:var(--azm-purple); color:#fff; transform:translateX(-2px); }
+.btn-m { color:#7A5F00; background:var(--miro-bg); border:1px solid #E8D96A; }
+.btn-m:hover { background:var(--miro); color:#3D2E00; transform:translateX(-2px); }
+.btn-v { color:#C62828; background:#FFEBEE; border:1px solid #FFCDD2; }
+.btn-v:hover { background:var(--red); color:#fff; }
+
+/* Videos */
+.vgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.3rem; }
+.vcard { background:#fff; border:1.5px solid var(--azm-border); border-radius:14px; overflow:hidden; transition:all .25s; }
+.vcard:hover { transform:translateY(-3px); box-shadow:0 6px 24px rgba(61,26,110,.12); border-color:var(--azm-purple); }
+.vthumb { width:100%; height:120px; background:linear-gradient(135deg,var(--azm-purple),var(--azm-purple2)); display:flex; align-items:center; justify-content:center; font-size:2rem; position:relative; }
+.vplay { position:absolute; background:rgba(255,255,255,.9); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--azm-purple); font-size:.95rem; transition:transform .25s; }
+.vcard:hover .vplay { transform:scale(1.12); }
+.vinfo { padding:1rem; }
+.vinfo h4 { font-size:.9rem; font-weight:700; color:var(--text); margin-bottom:.3rem; }
+.vmeta { display:flex; gap:.75rem; font-size:.74rem; color:var(--text-muted); margin-bottom:.45rem; }
+.vdesc { font-size:.8rem; color:var(--text-muted); margin-bottom:.65rem; }
+.vlink { display:inline-flex; align-items:center; gap:.35rem; color:var(--red); text-decoration:none; font-weight:600; font-size:.8rem; }
+
+/* Learning */
+.learn-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.6rem; }
+.learn-cat { background:#fff; border:1.5px solid var(--azm-border); border-radius:14px; padding:1.6rem; }
+.lcat-hdr { display:flex; align-items:center; gap:.85rem; margin-bottom:1.1rem; padding-bottom:.85rem; border-bottom:1.5px solid var(--azm-border); }
+.lcat-ico { font-size:1.5rem; }
+.lcat-ttl { font-size:1.1rem; font-weight:700; color:var(--azm-purple); }
+.lcat-list { list-style:none; }
+.lcat-list li { padding:.55rem 0; border-bottom:1px solid var(--azm-border); color:var(--text-muted); display:flex; align-items:flex-start; gap:.5rem; font-size:.875rem; }
+.lcat-list li:last-child { border-bottom:none; }
+.lcat-list li::before { content:'←'; color:var(--azm-purple); font-weight:bold; flex-shrink:0; }
+
+/* Footer */
+footer { background:var(--azm-purple); color:#fff; padding:2.5rem 2rem; margin-top:3rem; }
+.ftr { max-width:1400px; margin:0 auto; text-align:center; }
+.flogo { font-size:1.3rem; font-weight:700; margin-bottom:.5rem; color:#fff; }
+.ftext { color:rgba(255,255,255,.7); font-size:.88rem; margin-bottom:1.25rem; }
+.flinks { display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap; margin-bottom:1.25rem; }
+.flinks a { color:rgba(255,255,255,.65); text-decoration:none; font-size:.82rem; transition:color .25s; }
+.flinks a:hover { color:#fff; }
+.copy { font-size:.78rem; color:rgba(255,255,255,.45); padding-top:1.25rem; border-top:1px solid rgba(255,255,255,.15); }
+
+/* Scroll top */
+.stb { position:fixed; bottom:1.75rem; left:1.75rem; width:44px; height:44px; background:var(--azm-purple); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.2rem; cursor:pointer; opacity:0; transition:all .3s; z-index:1000; box-shadow:0 4px 16px rgba(61,26,110,.35); }
+.stb.on { opacity:1; }
+.stb:hover { transform:translateY(-3px); background:var(--azm-purple2); }
+
+@media(max-width:768px){
+  .hdr,.sec-hdr { flex-direction:column; text-align:center; }
+  .grid,.vgrid,.learn-grid { grid-template-columns:1fr; }
+  .links { justify-content:center; }
+  .stats { gap:1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div></div>
+      <div>
+        <h1>مصادر تحدي عزم 1.0</h1>
+        <p>Azm Challenge Resources Hub</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#s1">تعريف التحدي</a>
+      <a href="#s2">الظروف المحيطة</a>
+      <a href="#s3">تحليل الأسباب</a>
+      <a href="#s4">قياس الأثر</a>
+      <a href="#s5">بناء الحل</a>
+      <a href="#s6">مصادر تعليمية</a>
+      <a href="https://forms.fillout.com/t/1fMVRPbySgus" target="_blank" style="color:#fff;background:var(--azm-purple);border:none;padding:.4rem 1rem;">📝 سجّل الآن</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h2>عزم تتحدّاك!</h2>
+    <p>قوالب Miro جاهزة، أدوات احترافية، فيديوهات تعليمية</p>
+    <div class="stats">
+      <div class="stat-box"><span class="stat-n">50+</span><span class="stat-l">أداة ومصدر</span></div>
+      <div class="stat-box"><span class="stat-n">8</span><span class="stat-l">طرق تحليل الأسباب</span></div>
+      <div class="stat-box"><span class="stat-n">20+</span><span class="stat-l">قالب Miro جاهز</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Quick Links Banner ══ -->
+<div style="background:var(--azm-light);border-top:2px solid var(--azm-border);border-bottom:2px solid var(--azm-border);padding:1rem 2rem;">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;align-items:center;">
+    <span style="font-weight:700;color:var(--azm-purple);font-size:.88rem;margin-left:.5rem;">🔗 روابط مهمة:</span>
+    <a href="https://forms.fillout.com/t/1fMVRPbySgus" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;background:var(--azm-purple);color:#fff;font-weight:700;font-size:.82rem;padding:.45rem 1rem;border-radius:8px;">📝 نموذج التسجيل</a>
+    <a href="https://drive.google.com/file/d/1beCXhW894sSWMelRk17vzLrgVhbr5oNI/view" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;background:#fff;color:var(--azm-purple);border:1.5px solid var(--azm-border);font-weight:600;font-size:.82rem;padding:.45rem 1rem;border-radius:8px;">📋 الشروط والأحكام</a>
+    <a href="https://drive.google.com/drive/folders/1iYUHZL_tXJRjANGMfO-xuf0Ec0l_Kr3h" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;background:#fff;color:var(--azm-purple);border:1.5px solid var(--azm-border);font-weight:600;font-size:.82rem;padding:.45rem 1rem;border-radius:8px;">📁 مراجع تحدي عزم</a>
+    <a href="https://drive.google.com/file/d/1lT06kT1IqJig65xFrBZgZqsTOHqnz6j_/view" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;background:#fff;color:var(--azm-purple);border:1.5px solid var(--azm-border);font-weight:600;font-size:.82rem;padding:.45rem 1rem;border-radius:8px;">🎯 استراتيجية عزم</a>
+    <a href="https://drive.google.com/file/d/1wrUCQMpH5sqMMMRYvpDGYuZMb4wmHL0i/view?usp=drive_link" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;background:#fff;color:var(--azm-purple);border:1.5px solid var(--azm-border);font-weight:600;font-size:.82rem;padding:.45rem 1rem;border-radius:8px;">📊 العرض التعريفي للورشة</a>
+    <a href="https://drive.google.com/file/d/1IPAW8hnavNOiYJzlIxqg_pW78T2-NyH4/view?usp=drive_link" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;background:#fff;color:var(--azm-purple);border:1.5px solid var(--azm-border);font-weight:600;font-size:.82rem;padding:.45rem 1rem;border-radius:8px;">📖 Submission Guide</a>
+  </div>
+</div>
+
+<!-- ══════════════ القسم 1: تعريف التحدي ══════════════ -->
+<section class="section" id="s1">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl">
+      <h3>أدوات تعريف التحدي</h3>
+      <p>أدوات لوصف الوضع الراهن، الوضع المنشود، وتحديد الفجوة بوضوح</p>
+    </div>
+  </div>
+  <div class="grid">
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🔄</div><div class="c-ttl"><h4>Workflow Diagrams</h4><span class="cat">صف الوضع الراهن — رسم مسار العمل</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">ارسم كيف تسير العملية حالياً خطوة بخطوة: من يفعل ماذا؟ متى؟ وكيف؟ الرسم يكشف الخطوات غير الضرورية والتأخيرات المخفية التي يصعب رؤيتها بالكلام فقط.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/workflow-diagram/" target="_blank" class="btn btn-m">🟡 Workflow Diagram</a>
+          <a href="https://miro.com/templates/flowchart/" target="_blank" class="btn btn-m">🟡 Flowchart</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🎯</div><div class="c-ttl"><h4>Current State vs Future State</h4><span class="cat">صف الوضع المنشود — مقارنة بصرية</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">قارن بين كيف تسير الأمور الآن وكيف تريدها أن تكون. الجدار المرئي بين الحالتين يُظهر الفجوة بوضوح — مثالي لسؤال "صف الوضع المنشود أو الهدف".</p>
+        <div class="links">
+          <a href="https://miro.com/templates/current-state-vs-future-state/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">📊</div><div class="c-ttl"><h4>Gap Analysis Template</h4><span class="cat">صف الفجوة بين الحالي والمنشود</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">جدول تحليل الفجوة: عمود لما هو موجود الآن، عمود لما هو مطلوب، عمود للفجوة الفعلية. يُجبرك تفكر بوضوح ويمنعك من القفز للحلول قبل فهم المشكلة كاملاً.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/gap-analysis/" target="_blank" class="btn btn-m">🟡 Gap Analysis</a>
+          <a href="https://www.smartsheet.com/free-gap-analysis-templates" target="_blank" class="btn btn-p">📥 Smartsheet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">📄</div><div class="c-ttl"><h4>Problem Statement Canvas</h4><span class="cat">تحديد المشكلة بشكل منظم</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">قالب موجّه يسألك أسئلة محددة: ما المشكلة؟ من يعاني منها؟ ما الأثر؟ ما الوضع المثالي؟ يساعدك تصيغ المشكلة بوضوح قبل البحث عن الحل — تعريف التحدي بالكامل.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/problem-statement/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🗺️</div><div class="c-ttl"><h4>Journey Mapping</h4><span class="cat">رسم رحلة المتأثر بالمشكلة</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">ارسم رحلة الموظف أو المستخدم الذي يعاني من المشكلة: كل خطوة يمر بها، ما يشعر به، أين يتعثر. يُظهر نقاط الألم الحقيقية ويقوّي فهمك لمن يتأثر وكيف.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/customer-journey-map/" target="_blank" class="btn btn-m">🟡 Journey Map</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">📋</div><div class="c-ttl"><h4>Survey & Feedback Tools</h4><span class="cat">جمع بيانات حقيقية من المصدر</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">اسأل الناس مباشرة: ما المشكلة من وجهة نظرهم؟ كم مرة تحدث؟ كم تستغرق؟ البيانات من المستخدم الفعلي أقوى من أي تخمين — استخدمها لإثبات حجم المشكلة بالأرقام.</p>
+        <div class="c-tools"><strong>الأدوات:</strong> Google Forms (مجاني وسهل)، Typeform (تفاعلي وجميل)، Microsoft Forms</div>
+        <div class="links">
+          <a href="https://forms.google.com" target="_blank" class="btn btn-p">Google Forms</a>
+          <a href="https://www.typeform.com" target="_blank" class="btn btn-p">Typeform</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ القسم 2: الظروف المحيطة ══════════════ -->
+<section class="section" id="s2">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl">
+      <h3>أدوات الظروف المحيطة</h3>
+      <p>أدوات لفهم السياق الكامل — متى ومن وأين تحدث المشكلة</p>
+    </div>
+  </div>
+  <div class="grid">
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">⏰</div><div class="c-ttl"><h4>Timeline Template</h4><span class="cat">السياق الزمني — متى تبدأ المشكلة؟</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">متى لاحظت المشكلة لأول مرة؟ هل تحدث يومياً، أسبوعياً، أو في أوقات محددة (نهاية الشهر، موسم معين)؟ الـ Timeline يُظهر الأنماط الزمنية ويساعدك تحدد متى يرتفع أثرها.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/timeline/" target="_blank" class="btn btn-m">🟡 Timeline Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">👥</div><div class="c-ttl"><h4>Stakeholder Map</h4><span class="cat">السياق البشري — من يتأثر؟</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">من يتأثر بالمشكلة؟ من يسبّبها؟ من يملك صلاحية الحل؟ من له مصلحة؟ خريطة أصحاب المصلحة تُظهر كل الأطراف وعلاقاتهم — مفيدة لتحديد من هم المتأثرون والفرق المعنية.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/stakeholder-map/" target="_blank" class="btn btn-m">🟡 Stakeholder Map</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🏢</div><div class="c-ttl"><h4>Org Chart & Process Map</h4><span class="cat">السياق التنظيمي — العمليات والأنظمة</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">أي أقسام أو إدارات مرتبطة بالمشكلة؟ أي عمليات تتقاطع معها؟ فهم الهيكل التنظيمي يكشف العوائق البيروقراطية والتبعيات — مهم لتحديد السياق التنظيمي بوضوح.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/org-chart/" target="_blank" class="btn btn-m">🟡 Org Chart</a>
+          <a href="https://miro.com/templates/process-map/" target="_blank" class="btn btn-m">🟡 Process Map</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🧠</div><div class="c-ttl"><h4>Empathy Map</h4><span class="cat">فهم المتأثر بعمق</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">افهم الشخص المتأثر من 4 زوايا: ماذا يفكر؟ ماذا يشعر؟ ماذا يقول؟ ماذا يفعل؟ يُظهر البُعد الإنساني للمشكلة ويقوّي حجة "من هم المتأثرون والفرق المعنية".</p>
+        <div class="links">
+          <a href="https://miro.com/templates/empathy-map/" target="_blank" class="btn btn-m">🟡 Empathy Map</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ القسم 3: تحليل الأسباب ══════════════ -->
+<section class="section" id="s3">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl">
+      <h3>طرق تحليل الأسباب الجذرية</h3>
+      <p>8 طرق احترافية — اختر الأنسب لطبيعة مشكلتك</p>
+    </div>
+  </div>
+  <div class="grid">
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">❓</div><div class="c-ttl"><h4>5 Whys Technique</h4><span class="cat">للمشاكل البسيطة والمباشرة</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">أبسط طريقة وأكثرها فعالية: اسأل "لماذا؟" خمس مرات متتالية. مثال: لماذا تأخر الطلب؟ → لم تصل الموافقة → لماذا؟ → لم يتلقَّ المدير الإشعار → لماذا؟... حتى تصل للسبب الجذري.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/5-whys/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+          <a href="https://www.youtube.com/results?search_query=5+whys+root+cause+analysis" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🐟</div><div class="c-ttl"><h4>Fishbone (Ishikawa) Diagram</h4><span class="cat">للمشاكل المعقدة متعددة الأسباب</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">رسم يشبه هيكل السمكة — الرأس هو المشكلة، وكل عظمة تمثل فئة من الأسباب: أفراد، عمليات، أنظمة، بيئة، موارد. يساعدك لا تفوّت سبباً ولو كان غير واضح.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/fishbone-diagram/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+          <a href="https://www.youtube.com/results?search_query=fishbone+diagram+ishikawa+tutorial" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🌳</div><div class="c-ttl"><h4>Fault Tree Analysis</h4><span class="cat">للمشاكل التقنية والمنهجية</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">رسم شجري من أعلى لأسفل: المشكلة في الأعلى، والأسباب المحتملة تتفرع تحتها. مفيد لتحليل الأنظمة التقنية ومعرفة ما الذي يؤدي لماذا بشكل منطقي.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/fault-tree-analysis/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+          <a href="https://www.youtube.com/results?search_query=fault+tree+analysis+tutorial" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">📊</div><div class="c-ttl"><h4>Pareto Analysis (80/20)</h4><span class="cat">لتحديد الأسباب الأكثر أثراً</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">رتّب الأسباب من الأكثر تأثيراً للأقل. عادةً 20% من الأسباب تسبب 80% من المشاكل. الهدف: ركّز جهدك على الـ 20% الأهم أولاً بدل توزيع الطاقة على كل شيء.</p>
+        <div class="c-tools"><strong>كيف تطبّقه:</strong> اكتب كل الأسباب، صوّت عليها مع الفريق حسب التأثير، ورتّبها في قائمة من الأكبر للأصغر</div>
+        <div class="links">
+          <a href="https://www.youtube.com/results?search_query=pareto+analysis+80+20+explained" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+          <a href="https://asq.org/quality-resources/pareto" target="_blank" class="btn btn-p">📖 دليل ASQ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">⚠️</div><div class="c-ttl"><h4>FMEA</h4><span class="cat">لتحليل مخاطر الفشل المحتملة</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">اختصار: Failure Mode & Effects Analysis. لكل خطوة في العملية اسأل: ما الذي يمكن أن يفشل؟ ما احتمال حدوثه؟ ما تأثيره؟ ثم رتّب المخاطر حسب الأولوية.</p>
+        <div class="links">
+          <a href="https://asq.org/quality-resources/fmea" target="_blank" class="btn btn-p">📖 دليل ASQ</a>
+          <a href="https://www.youtube.com/results?search_query=FMEA+failure+mode+effects+analysis" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">🎯</div><div class="c-ttl"><h4>Kepner-Tregoe Method</h4><span class="cat">للقرارات الحرجة والمعقدة</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">منهجية منظمة من 4 خطوات: حدّد المشكلة بدقة، حلّل الأسباب، قيّم الحلول البديلة، ضع خطة لمنع التكرار. تُستخدم في كبرى الشركات للقرارات الصعبة.</p>
+        <div class="c-tools"><strong>🎥 ابدأ بالفيديو:</strong> أسهل بكثير من قراءة الموقع الرسمي — الفيديو يشرحها بصرياً وبأمثلة</div>
+        <div class="links">
+          <a href="https://www.youtube.com/results?search_query=kepner+tregoe+problem+solving+explained" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">📐</div><div class="c-ttl"><h4>DMAIC (Six Sigma)</h4><span class="cat">لتحسين الجودة بشكل منهجي</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">اختصار: Define, Measure, Analyze, Improve, Control. منهجية كاملة قائمة على البيانات والأرقام. الأفضل حين لديك مقاييس واضحة وتريد تحسيناً مستداماً وقابلاً للقياس.</p>
+        <div class="links">
+          <a href="https://www.isixsigma.com/tools-templates/" target="_blank" class="btn btn-p">📖 iSixSigma</a>
+          <a href="https://www.youtube.com/results?search_query=DMAIC+six+sigma+explained+simply" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">📋</div><div class="c-ttl"><h4>A3 Problem Solving (Toyota)</h4><span class="cat">للتفكير المنهجي والموجز</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">طريقة Toyota الشهيرة: اكتب كل شيء — المشكلة، التحليل، الحل، خطة التنفيذ — في ورقة A3 واحدة. يُجبرك تختصر وتوضح، ويجعل عرضك أمام اللجنة أقوى وأوضح.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/a3-report/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+          <a href="https://www.youtube.com/results?search_query=A3+problem+solving+toyota+lean" target="_blank" class="btn btn-v">▶ فيديو شرح</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- فيديوهات تحليل الأسباب -->
+<section class="section">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl"><h3>فيديوهات — تحليل الأسباب الجذرية</h3><p>شروحات مرئية لأهم الطرق</p></div>
+  </div>
+  <div class="vgrid">
+    <div class="vcard">
+      <div class="vthumb">❓<div class="vplay">▶</div></div>
+      <div class="vinfo"><h4>5 Whys Root Cause Analysis</h4><div class="vmeta"><span>Simplilearn</span><span>~8 دقائق</span></div><p class="vdesc">شرح مبسط مع أمثلة خطوة بخطوة</p><a href="https://www.youtube.com/results?search_query=5+whys+simplilearn" target="_blank" class="vlink">🔗 YouTube</a></div>
+    </div>
+    <div class="vcard">
+      <div class="vthumb">🐟<div class="vplay">▶</div></div>
+      <div class="vinfo"><h4>Fishbone Diagram Tutorial</h4><div class="vmeta"><span>Quality HUB India</span><span>~12 دقيقة</span></div><p class="vdesc">كيف ترسم وتملأ مخطط Ishikawa</p><a href="https://www.youtube.com/results?search_query=fishbone+diagram+tutorial+ishikawa" target="_blank" class="vlink">🔗 YouTube</a></div>
+    </div>
+    <div class="vcard">
+      <div class="vthumb">🎯<div class="vplay">▶</div></div>
+      <div class="vinfo"><h4>Kepner-Tregoe Explained</h4><div class="vmeta"><span>YouTube</span><span>~15 دقيقة</span></div><p class="vdesc">فهم المنهجية بشكل بصري وعملي</p><a href="https://www.youtube.com/results?search_query=kepner+tregoe+problem+solving" target="_blank" class="vlink">🔗 YouTube</a></div>
+    </div>
+    <div class="vcard">
+      <div class="vthumb">📋<div class="vplay">▶</div></div>
+      <div class="vinfo"><h4>A3 Problem Solving (Toyota)</h4><div class="vmeta"><span>Lean Smarts</span><span>~10 دقائق</span></div><p class="vdesc">منهجية Toyota للتفكير المنهجي</p><a href="https://www.youtube.com/results?search_query=A3+problem+solving+lean+toyota" target="_blank" class="vlink">🔗 YouTube</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ القسم 4: قياس الأثر ══════════════ -->
+<section class="section" id="s4">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl">
+      <h3>أدوات قياس الأثر والربط بالأولويات</h3>
+      <p>كيف تُظهر أن التحدي يستحق الحل وكيف يرتبط بأهداف عزم الاستراتيجية</p>
+    </div>
+  </div>
+  <div class="grid">
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">📊</div><div class="c-ttl"><h4>Impact vs Effort Matrix</h4><span class="cat">تحديد أولوية التحدي</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">رسم بياني بمحورين: المحور الأفقي = الجهد المطلوب للحل، المحور العمودي = الأثر المتوقع. التحديات في خانة "أثر كبير + جهد قليل" هي الأولوية القصوى — استخدمه لإقناع اللجنة.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/impact-effort-matrix/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🎯</div><div class="c-ttl"><h4>Priority Matrix (Eisenhower)</h4><span class="cat">تحديد الأهمية والإلحاحية</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">مصفوفة الأهمية والإلحاحية: هل التحدي مهم وعاجل؟ أم مهم لكن ليس الآن؟ تساعدك تبرر لماذا هذا التحدي يستحق الاهتمام الآن تحديداً وليس لاحقاً.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/eisenhower-matrix/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🔗</div><div class="c-ttl"><h4>OKR Mapping</h4><span class="cat">الربط المباشر بأهداف عزم</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">اربط تحديك بأهداف الشركة الاستراتيجية: Objective (ماذا نريد نحقق؟) + Key Results (كيف نقيس النجاح؟). اسأل نفسك: إذا حللنا هذا التحدي، أي هدف استراتيجي لعزم سيتحسن مباشرة؟</p>
+        <div class="links">
+          <a href="https://miro.com/templates/okrs/" target="_blank" class="btn btn-m">🟡 OKR Template</a>
+          <a href="https://asana.com/resources/okr-meaning" target="_blank" class="btn btn-p">📖 دليل OKR</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">⚖️</div><div class="c-ttl"><h4>Balanced Scorecard</h4><span class="cat">بطاقة الأداء المتوازن — 4 أبعاد</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">قيّم أثر التحدي على 4 أبعاد: المالي (كم ستوفّر أو تكسب؟)، العملاء (هل تتحسن تجربتهم؟)، العمليات (هل تصير أسرع وأدق؟)، التعلم (هل يتطور الفريق؟). إطار شامل يُظهر الأثر الكامل.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/balanced-scorecard/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ القسم 5: بناء الحل ══════════════ -->
+<section class="section" id="s5">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl">
+      <h3>أدوات بناء الحل المقترح</h3>
+      <p>من الفكرة إلى الحل الواضح والقابل للتنفيذ</p>
+    </div>
+  </div>
+  <div class="grid">
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🎨</div><div class="c-ttl"><h4>Design Thinking Canvas</h4><span class="cat">من المشكلة إلى الحل</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">منهجية من 5 خطوات: Empathize (افهم المتأثر)، Define (صُغ المشكلة)، Ideate (ابتكر حلولاً متعددة)، Prototype (اعمل نموذجاً)، Test (جرّب واحكم). الأفضل لبناء حلول مبتكرة.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/design-thinking/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">🚀</div><div class="c-ttl"><h4>MVP Experiment Canvas</h4><span class="cat">أبسط نسخة من الحل — للاختبار السريع</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">Minimum Viable Product: ما أبسط نسخة من الحل تُثبت أنه يعمل؟ بدل بناء الحل الكامل، حدد الحد الأدنى الذي تختبره بسرعة. مثال: بدل نظام موافقات كامل، جرّب نموذج Google Form مشترك.</p>
+        <div class="links">
+          <a href="https://next.canvanizer.com/demo/mvp-experiment-canvas" target="_blank" class="btn btn-p">📋 MVP Canvas</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🏗️</div><div class="c-ttl"><h4>Solution Definition Board</h4><span class="cat">وصف الحل وآلية عمله</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">لوح منظم لوصف الحل بالكامل: ما هو الحل؟ كيف يعالج الأسباب الجذرية؟ كيف يسد الفجوة؟ ما آلية التنفيذ؟ يجعل فكرتك واضحة ومقنعة أمام لجنة التحكيم.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/solution-definition/" target="_blank" class="btn btn-m">🟡 قالب Miro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card miro">
+      <div class="miro-badge">🟡 Miro Template</div>
+      <div class="c-hdr"><div class="c-ico">🛠️</div><div class="c-ttl"><h4>Resource & Support Mapping</h4><span class="cat">تصنيف الدعم المطلوب لبناء الحل</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">صنّف الدعم الذي تحتاجه لبناء الحل في 4 فئات: بشري (من يساعد؟)، مادي (ميزانية؟)، تقني (أنظمة؟)، إداري (موافقات؟). يساعدك تكون محدداً جداً عند طلب الدعم من الإدارة.</p>
+        <div class="links">
+          <a href="https://miro.com/templates/resource-planning/" target="_blank" class="btn btn-m">🟡 Resource Planning</a>
+          <a href="https://miro.com/templates/project-charter/" target="_blank" class="btn btn-m">🟡 Project Charter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">📋</div><div class="c-ttl"><h4>Lean Canvas</h4><span class="cat">خطة الحل الكاملة في صفحة</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">خطة العمل الكاملة في صفحة واحدة: المشكلة، الحل، الميزة الفريدة، المستخدمون، قنوات الوصول، التكاليف، والقيمة المحققة. واضح وسريع ومقنع — مثالي لعرض الفكرة.</p>
+        <div class="links">
+          <a href="https://next.canvanizer.com/demo/mvp-experiment-canvas" target="_blank" class="btn btn-p">📋 نموذج MVP</a>
+          <a href="https://canvanizer.com" target="_blank" class="btn btn-p">Canvanizer</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-hdr"><div class="c-ico">🖼️</div><div class="c-ttl"><h4>Wireframing & Prototyping</h4><span class="cat">رسم النموذج الأولي للحل</span></div></div>
+      <div class="c-body">
+        <p class="c-desc">ارسم شكل الحل قبل بناؤه — كيف سيبدو؟ كيف سيعمل؟ حتى رسم بسيط على ورق يُساعد لجنة التحكيم يتخيلوا الفكرة. للحلول الرقمية والتقنية تحديداً.</p>
+        <div class="c-tools"><strong>الأدوات:</strong> Figma (مجاني وقوي)، Balsamiq (سريع جداً)، أو حتى رسم يدوي واضح</div>
+        <div class="links">
+          <a href="https://www.figma.com" target="_blank" class="btn btn-p">Figma</a>
+          <a href="https://balsamiq.com" target="_blank" class="btn btn-p">Balsamiq</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ مصادر تعليمية ══════════════ -->
+<section class="section" id="s6">
+  <div class="sec-hdr">
+    
+    <div class="sec-ttl"><h3>📚 مصادر تعليمية شاملة</h3><p>كتب، دورات مجانية، ومواقع مرجعية</p></div>
+  </div>
+  <div class="learn-grid">
+    <div class="learn-cat">
+      <div class="lcat-hdr"><span class="lcat-ico">📖</span><h4 class="lcat-ttl">كتب موصى بها</h4></div>
+      <ul class="lcat-list">
+        <li>The Lean Startup — Eric Ries</li>
+        <li>Sprint: Solve Big Problems — Jake Knapp</li>
+        <li>Problem Solving 101 — Ken Watanabe</li>
+        <li>The Toyota Way — Jeffrey Liker</li>
+      </ul>
+    </div>
+    <div class="learn-cat">
+      <div class="lcat-hdr"><span class="lcat-ico">🎓</span><h4 class="lcat-ttl">دورات مجانية</h4></div>
+      <ul class="lcat-list">
+        <li>Coursera: Design Thinking (UVA)</li>
+        <li>edX: Problem Solving (RIT)</li>
+        <li>LinkedIn Learning: Root Cause Analysis</li>
+        <li>Miro Academy: Templates & Tutorials</li>
+      </ul>
+    </div>
+    <div class="learn-cat">
+      <div class="lcat-hdr"><span class="lcat-ico">🌐</span><h4 class="lcat-ttl">مواقع مرجعية</h4></div>
+      <ul class="lcat-list">
+        <li><a href="https://mindtools.com" target="_blank" style="color:var(--magenta)">MindTools.com</a> — أدوات حل المشاكل</li>
+        <li><a href="https://asq.org" target="_blank" style="color:var(--magenta)">ASQ.org</a> — جمعية الجودة الأمريكية</li>
+        <li><a href="https://lean.org" target="_blank" style="color:var(--magenta)">Lean.org</a> — مصادر Lean Management</li>
+        <li><a href="https://miro.com/templates" target="_blank" style="color:var(--miro)">Miro Templates</a> — مئات القوالب</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="ftr">
+    <div class="flogo">مصادر تحدي عزم 1.0</div>
+    <p class="ftext"></p>
+    <div class="flinks">
+      <a href="#s1">تعريف التحدي</a>
+      <a href="#s2">الظروف المحيطة</a>
+      <a href="#s3">تحليل الأسباب</a>
+      <a href="#s4">قياس الأثر</a>
+      <a href="#s5">بناء الحل</a>
+      <a href="#s6">مصادر تعليمية</a>
+    </div>
+    <div class="flinks" style="margin-top:.5rem;">
+      <a href="https://forms.fillout.com/t/1fMVRPbySgus" target="_blank">📝 نموذج التسجيل</a>
+      <a href="https://drive.google.com/file/d/1beCXhW894sSWMelRk17vzLrgVhbr5oNI/view" target="_blank">📋 الشروط والأحكام</a>
+      <a href="https://drive.google.com/drive/folders/1iYUHZL_tXJRjANGMfO-xuf0Ec0l_Kr3h" target="_blank">📁 مراجع التحدي</a>
+      <a href="https://drive.google.com/file/d/1lT06kT1IqJig65xFrBZgZqsTOHqnz6j_/view" target="_blank">🎯 استراتيجية عزم</a>
+      <a href="https://drive.google.com/file/d/1wrUCQMpH5sqMMMRYvpDGYuZMb4wmHL0i/view?usp=drive_link" target="_blank">📊 العرض التعريفي</a>
+      <a href="https://drive.google.com/file/d/1IPAW8hnavNOiYJzlIxqg_pW78T2-NyH4/view?usp=drive_link" target="_blank">📖 Submission Guide</a>
+    </div>
+    <p class="copy">© 2025 عزم — جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<div class="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.querySelector('.stb').classList.toggle('on', window.scrollY > 400);
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
