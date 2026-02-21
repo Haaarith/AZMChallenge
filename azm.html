@@ -45,50 +45,50 @@
 
         /* ===== HEADER ===== */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--azm-border);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
         }
 
         .header-inner {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0.8rem 2rem;
+            padding: 0.7rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.7rem;
         }
 
         .logo-img {
-            height: 45px;
+            height: 40px;
         }
 
         .logo-text h1 {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--azm-purple);
-            margin-bottom: 0.1rem;
         }
 
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 0.75rem;
+            }
         }
 
         nav {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
@@ -96,10 +96,10 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             transition: all 0.3s;
             position: relative;
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
         }
 
         nav a.active {
@@ -125,10 +125,10 @@
             background: var(--azm-light);
             border: 1.5px solid var(--azm-border);
             border-radius: 8px;
-            padding: 0.4rem 0.9rem;
+            padding: 0.4rem 0.85rem;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--azm-purple);
             transition: all 0.3s;
         }
@@ -143,7 +143,7 @@
         .hero-section {
             background: linear-gradient(135deg, var(--azm-purple) 0%, var(--azm-purple2) 100%);
             color: #fff;
-            padding: 3.5rem 2rem 4rem;
+            padding: 2rem 1.5rem 2.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -169,87 +169,37 @@
 
         .hero-content {
             text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            animation: fadeInDown 0.8s ease-out;
+            margin-bottom: 2rem;
         }
 
         .hero-content h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             animation: fadeInUp 0.8s ease-out 0.2s both;
             line-height: 1.3;
         }
 
         .hero-description {
-            font-size: 1.05rem;
-            opacity: 0.95;
-            max-width: 900px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.9;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .hero-goals {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .goal-item {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s;
-        }
-
-        .goal-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-3px);
-        }
-
-        .goal-icon {
-            font-size: 1.5rem;
-        }
-
-        .goal-text {
             font-size: 0.95rem;
-            font-weight: 600;
+            opacity: 0.95;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
         /* Timer Section */
         .timer-section {
-            max-width: 800px;
-            margin: 3rem auto 0;
+            max-width: 1000px;
+            margin: 2rem auto 0;
             animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         .timer-box {
             background: rgba(255,255,255,0.98);
-            border-radius: 20px;
-            padding: 2rem;
+            border-radius: 16px;
+            padding: 1.8rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             position: relative;
             overflow: hidden;
@@ -261,32 +211,35 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--azm-purple), var(--azm-accent), var(--miro));
         }
 
-        .timer-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            color: var(--azm-purple);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
+        .timer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
         }
 
-        .timer-title .clock-icon {
-            font-size: 1.5rem;
+        /* Left Side - Timer */
+        .timer-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timer-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--azm-purple);
         }
 
         .countdown {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            gap: 0.8rem;
             direction: ltr;
-            margin-bottom: 1.5rem;
         }
 
         .time-unit {
@@ -296,13 +249,13 @@
         .time-value {
             background: linear-gradient(135deg, var(--azm-purple), var(--azm-purple2));
             color: #fff;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            padding: 1rem;
-            border-radius: 12px;
+            padding: 0.8rem 0.5rem;
+            border-radius: 10px;
             display: block;
-            margin-bottom: 0.5rem;
-            box-shadow: 0 4px 15px rgba(61, 26, 110, 0.3);
+            margin-bottom: 0.4rem;
+            box-shadow: 0 4px 12px rgba(61, 26, 110, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -325,40 +278,51 @@
         }
 
         .time-label {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             font-weight: 600;
         }
 
+        /* Right Side - Submit */
+        .timer-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .submit-info {
-            background: linear-gradient(135deg, var(--azm-light), #fff);
-            padding: 1.5rem;
-            border-radius: 12px;
             text-align: center;
-            border: 2px dashed var(--azm-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .submit-info p {
             color: var(--text-muted);
             margin-bottom: 1rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .submit-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
+            justify-content: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #FFE066, #FFB84D);
             color: var(--azm-purple);
             font-weight: 700;
-            font-size: 1.15rem;
-            padding: 1.2rem 3rem;
+            font-size: 1.05rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
             position: relative;
             overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+            white-space: nowrap;
         }
 
         .submit-button::before {
@@ -381,37 +345,90 @@
 
         .submit-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 35px rgba(255, 215, 0, 0.6);
-        }
-
-        .submit-note {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
         }
 
         .prize-badge {
             background: linear-gradient(135deg, var(--gold), #DC2626);
             color: #fff;
-            padding: 0.5rem 1.2rem;
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             margin-top: 1rem;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .submit-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        /* Registration Notice */
+        .registration-notice {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            padding: 0.9rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #D1D5DB;
+        }
+
+        .registration-notice-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .notice-text {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .notice-steps {
+            display: flex;
+            gap: 0.8rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .notice-step {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .register-btn-small {
+            background: var(--azm-purple);
+            color: #fff;
+            padding: 0.45rem 1.1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .register-btn-small:hover {
+            background: var(--azm-purple2);
+            transform: translateY(-2px);
         }
 
         /* Resources Section */
         .resources-section {
             background: #fff;
-            padding: 2.5rem 2rem;
+            padding: 2rem 1.5rem;
             border-top: 3px solid var(--azm-light);
         }
 
@@ -422,32 +439,32 @@
 
         .resources-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .resources-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--azm-purple);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .resources-header p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
 
         .resources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
         }
 
         .resource-card {
             background: #fff;
             border: 2px solid var(--azm-border);
-            border-radius: 14px;
-            padding: 1.8rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -459,7 +476,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(90deg, var(--azm-purple), var(--azm-accent));
             transform: scaleX(0);
             transition: transform 0.3s;
@@ -478,16 +495,16 @@
         .resource-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 0.9rem;
+            margin-bottom: 0.9rem;
         }
 
         .resource-icon {
-            font-size: 2rem;
-            width: 55px;
-            height: 55px;
+            font-size: 1.8rem;
+            width: 50px;
+            height: 50px;
             background: var(--azm-light);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -495,30 +512,30 @@
         }
 
         .resource-info h3 {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--azm-purple);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
         .resource-desc {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
 
         .resource-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             color: var(--azm-purple);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0.6rem 1.3rem;
+            font-size: 0.85rem;
+            padding: 0.5rem 1.1rem;
             background: var(--azm-light);
-            border-radius: 10px;
+            border-radius: 8px;
             transition: all 0.3s;
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
         }
 
         .resource-link:hover {
@@ -527,61 +544,9 @@
             transform: translateX(-5px);
         }
 
-        /* Registration Notice */
-        .registration-notice {
-            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
-            padding: 1.2rem 2rem;
-            text-align: center;
-            border-bottom: 1px solid #D1D5DB;
-        }
-
-        .registration-notice-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .notice-text {
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-
-        .notice-steps {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .notice-step {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .register-btn-small {
-            background: var(--azm-purple);
-            color: #fff;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .register-btn-small:hover {
-            background: var(--azm-purple2);
-            transform: translateY(-2px);
-        }
-
         /* ===== TOOLS SECTION ===== */
         .tools-section {
-            padding: 3.5rem 2rem;
+            padding: 2.5rem 1.5rem;
             background: #FAFAFA;
         }
 
@@ -592,18 +557,18 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--azm-purple);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .section-header p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             max-width: 700px;
             margin: 0 auto;
@@ -612,64 +577,65 @@
         .section-notice {
             background: linear-gradient(135deg, #FEF3C7, #FDE68A);
             border: 2px solid #FCD34D;
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            margin-bottom: 2rem;
+            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .section-notice-icon {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .section-notice-text {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #78350F;
             font-weight: 600;
         }
 
-        /* Category */
+        /* Category - Smaller */
         .tools-category {
-            margin-bottom: 2rem;
+            margin-bottom: 1.3rem;
         }
 
         .category-header {
             background: linear-gradient(135deg, #fff, var(--azm-light));
             border: 2px solid var(--azm-border);
-            border-right: 6px solid var(--azm-purple);
-            padding: 1.8rem 2rem;
-            border-radius: 14px;
-            margin-bottom: 1.5rem;
+            border-right: 4px solid var(--azm-purple);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             position: relative;
         }
 
         .category-header::after {
             content: '▼';
             position: absolute;
-            left: 2rem;
+            left: 1.3rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             color: var(--azm-purple);
             transition: all 0.3s;
         }
 
         .category-header:hover {
-            transform: translateX(-8px);
-            box-shadow: 0 6px 20px rgba(61, 26, 110, 0.15);
+            transform: translateX(-5px);
+            box-shadow: 0 4px 14px rgba(61, 26, 110, 0.1);
             border-color: var(--azm-purple);
         }
 
         .category-header.active {
             background: linear-gradient(135deg, var(--azm-purple), var(--azm-purple2));
             color: #fff;
-            transform: translateX(-8px);
-            box-shadow: 0 8px 30px rgba(61, 26, 110, 0.3);
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(61, 26, 110, 0.2);
         }
 
         .category-header.active::after {
@@ -680,20 +646,21 @@
         .category-title {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 0.9rem;
         }
 
         .category-icon {
-            font-size: 2.5rem;
+            font-size: 1.4rem;
             background: #fff;
-            width: 70px;
-            height: 70px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s;
+            flex-shrink: 0;
         }
 
         .category-header.active .category-icon {
@@ -702,30 +669,30 @@
         }
 
         .category-info h3 {
-            font-size: 1.5rem;
+            font-size: 0.98rem;
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.2rem;
         }
 
         .category-info p {
-            font-size: 0.95rem;
+            font-size: 0.75rem;
             opacity: 0.9;
         }
 
         .category-stats {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-            font-size: 0.85rem;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+            font-size: 0.65rem;
             font-weight: 600;
         }
 
         .stat-badge {
             background: rgba(255,255,255,0.9);
             color: var(--azm-purple);
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 0.28rem 0.65rem;
+            border-radius: 18px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         }
 
         .category-header.active .stat-badge {
@@ -736,8 +703,8 @@
         /* Tools Grid */
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
             opacity: 0;
             max-height: 0;
             overflow: hidden;
@@ -747,14 +714,14 @@
         .tools-grid.active {
             opacity: 1;
             max-height: 15000px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .tool-card {
             background: #fff;
             border: 2px solid var(--azm-border);
-            border-radius: 16px;
-            padding: 1.8rem;
+            border-radius: 14px;
+            padding: 1.5rem;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -766,7 +733,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--azm-purple), var(--azm-accent));
             transform: scaleX(0);
             transition: transform 0.3s;
@@ -777,9 +744,9 @@
         }
 
         .tool-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: var(--azm-purple);
-            box-shadow: 0 12px 35px rgba(61, 26, 110, 0.18);
+            box-shadow: 0 10px 30px rgba(61, 26, 110, 0.15);
         }
 
         .tool-card.miro {
@@ -792,7 +759,7 @@
 
         .tool-card.miro:hover {
             border-color: var(--miro);
-            box-shadow: 0 12px 35px rgba(247, 198, 0, 0.25);
+            box-shadow: 0 10px 30px rgba(247, 198, 0, 0.2);
         }
 
         .miro-badge {
@@ -802,84 +769,84 @@
             background: var(--miro-bg);
             border: 1px solid #E8D96A;
             color: #7A5F00;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 18px;
+            margin-bottom: 0.9rem;
         }
 
         .tool-header {
             display: flex;
             align-items: flex-start;
-            gap: 1.2rem;
-            margin-bottom: 1.2rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .tool-icon {
-            font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
+            font-size: 1.4rem;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--azm-light);
-            border-radius: 12px;
+            border-radius: 10px;
             flex-shrink: 0;
         }
 
         .tool-title h4 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--text);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
         .tool-category {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--azm-purple2);
             font-weight: 600;
         }
 
         .tool-desc {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.75;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
         .tool-meta {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            padding: 0.8rem 1rem;
+            margin-bottom: 1rem;
+            padding: 0.7rem 0.9rem;
             background: var(--azm-light);
-            border-radius: 10px;
-            border-right: 4px solid var(--azm-purple);
+            border-radius: 8px;
+            border-right: 3px solid var(--azm-purple);
         }
 
         .tool-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
 
         .tool-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.5rem 1.1rem;
-            border-radius: 10px;
+            font-size: 0.8rem;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
             transition: all 0.3s;
         }
 
         .tool-link-primary {
             color: var(--azm-purple);
             background: var(--azm-light);
-            border: 2px solid var(--azm-border);
+            border: 1.5px solid var(--azm-border);
         }
 
         .tool-link-primary:hover {
@@ -891,7 +858,7 @@
         .tool-link-miro {
             color: #7A5F00;
             background: var(--miro-bg);
-            border: 2px solid #E8D96A;
+            border: 1.5px solid #E8D96A;
         }
 
         .tool-link-miro:hover {
@@ -903,7 +870,7 @@
         .tool-link-video {
             color: var(--red);
             background: #FFF5F5;
-            border: 2px solid #FFE5E5;
+            border: 1.5px solid #FFE5E5;
         }
 
         .tool-link-video:hover {
@@ -916,8 +883,8 @@
         footer {
             background: var(--azm-purple);
             color: #fff;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
+            padding: 2.5rem 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .footer-inner {
@@ -927,21 +894,21 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .footer-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .footer-section p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             opacity: 0.9;
-            line-height: 1.8;
+            line-height: 1.75;
         }
 
         .contact-list {
@@ -949,8 +916,8 @@
         }
 
         .contact-list li {
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
 
@@ -960,7 +927,7 @@
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
 
         .contact-list a:hover {
@@ -970,9 +937,9 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
         }
 
@@ -999,94 +966,373 @@
             }
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .countdown {
-                gap: 0.8rem;
-            }
-            
-            .time-value {
-                font-size: 2rem;
-                padding: 0.8rem;
-            }
-        }
-
+        /* ===== MOBILE RESPONSIVE - CRITICAL ===== */
         @media (max-width: 768px) {
+            /* Header - Very Compact */
             .header-inner {
-                flex-direction: column;
-                text-align: center;
-                padding: 1rem;
+                padding: 0.45rem 0.9rem;
+                gap: 0.5rem;
+                flex-wrap: nowrap;
+            }
+
+            .logo-img {
+                height: 26px;
+            }
+
+            .logo-text h1 {
+                font-size: 0.72rem;
+                white-space: nowrap;
+            }
+
+            .logo-text p {
+                font-size: 0.62rem;
             }
 
             nav {
-                flex-direction: column;
-                gap: 0.8rem;
+                gap: 0.45rem;
+                flex-shrink: 0;
+            }
+
+            nav a {
+                font-size: 0.65rem;
+                padding: 0.2rem 0;
+            }
+
+            .lang-switcher {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.65rem;
+                flex-shrink: 0;
+            }
+
+            /* Hero - Compact */
+            .hero-section {
+                padding: 1.3rem 0.9rem 1.8rem;
             }
 
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
             }
 
-            .hero-goals {
-                flex-direction: column;
-                gap: 1rem;
+            .hero-description {
+                font-size: 0.82rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            /* Timer - Stack Vertically */
+            .timer-box {
+                padding: 1.1rem;
+            }
+
+            .timer-content {
+                grid-template-columns: 1fr;
+                gap: 1.3rem;
+            }
+
+            .timer-title {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
             }
 
             .countdown {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.45rem;
             }
 
             .time-value {
-                font-size: 1.8rem;
+                font-size: 1.35rem;
+                padding: 0.55rem 0.28rem;
+            }
+
+            .time-label {
+                font-size: 0.62rem;
+            }
+
+            .submit-info p {
+                font-size: 0.82rem;
             }
 
             .submit-button {
-                font-size: 1rem;
-                padding: 1rem 2rem;
+                font-size: 0.9rem;
+                padding: 0.85rem 1.8rem;
+                max-width: 100%;
             }
 
-            .tools-grid {
-                grid-template-columns: 1fr;
+            .prize-badge {
+                font-size: 0.72rem;
+                padding: 0.38rem 0.85rem;
             }
 
-            .category-header {
-                padding: 1.2rem 1.5rem 1.2rem 4rem;
+            .submit-note {
+                font-size: 0.72rem;
             }
 
-            .category-header::after {
-                left: 1.5rem;
-            }
-
-            .category-title {
-                flex-direction: column;
-                text-align: center;
+            /* Registration Notice */
+            .registration-notice {
+                padding: 0.7rem 0.9rem;
             }
 
             .registration-notice-inner {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.7rem;
+            }
+
+            .notice-text {
+                font-size: 0.8rem;
             }
 
             .notice-steps {
                 flex-direction: column;
+                gap: 0.35rem;
+                font-size: 0.72rem;
+            }
+
+            .register-btn-small {
+                font-size: 0.75rem;
+                padding: 0.38rem 0.95rem;
+            }
+
+            /* Resources */
+            .resources-section {
+                padding: 1.4rem 0.9rem;
+            }
+
+            .resources-header h2 {
+                font-size: 1.35rem;
+            }
+
+            .resources-header p {
+                font-size: 0.82rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 0.95rem;
+            }
+
+            .resource-card {
+                padding: 1.1rem;
+            }
+
+            .resource-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 1.45rem;
+            }
+
+            .resource-info h3 {
+                font-size: 0.88rem;
+            }
+
+            .resource-desc {
+                font-size: 0.73rem;
+            }
+
+            .resource-link {
+                font-size: 0.8rem;
+                padding: 0.45rem 1rem;
+            }
+
+            /* Tools Section */
+            .tools-section {
+                padding: 1.8rem 0.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .section-header p {
+                font-size: 0.82rem;
+            }
+
+            .section-notice {
+                padding: 0.65rem 0.9rem;
+                gap: 0.55rem;
+            }
+
+            .section-notice-icon {
+                font-size: 1.25rem;
+            }
+
+            .section-notice-text {
+                font-size: 0.75rem;
+            }
+
+            /* Category - Smaller */
+            .tools-category {
+                margin-bottom: 1rem;
+            }
+
+            .category-header {
+                padding: 0.85rem 1rem 0.85rem 3.2rem;
+            }
+
+            .category-header::after {
+                left: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .category-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.7rem;
+            }
+
+            .category-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.5rem;
+            }
+
+            .category-info h3 {
+                font-size: 0.98rem;
+            }
+
+            .category-info p {
+                font-size: 0.75rem;
+            }
+
+            .category-stats {
+                flex-direction: column;
+                gap: 0.4rem;
+                font-size: 0.68rem;
+            }
+
+            /* Tools Grid */
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1.1rem;
+            }
+
+            .tool-card {
+                padding: 1.1rem;
+            }
+
+            .tool-header {
+                gap: 0.75rem;
+            }
+
+            .tool-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1.15rem;
+            }
+
+            .tool-title h4 {
+                font-size: 0.92rem;
+            }
+
+            .tool-category {
+                font-size: 0.68rem;
+            }
+
+            .tool-desc {
+                font-size: 0.78rem;
+            }
+
+            .miro-badge {
+                font-size: 0.63rem;
+            }
+
+            .tool-meta {
+                font-size: 0.73rem;
+                padding: 0.58rem 0.75rem;
+            }
+
+            .tool-link {
+                font-size: 0.73rem;
+                padding: 0.38rem 0.85rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 1.8rem 0.9rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+
+            .footer-section h3 {
+                font-size: 0.98rem;
+            }
+
+            .footer-section p,
+            .contact-list li {
+                font-size: 0.82rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.78rem;
+            }
+        }
+
+        /* Extra Small Devices */
+        @media (max-width: 480px) {
+            .header-inner {
+                padding: 0.4rem 0.7rem;
+            }
+
+            .logo-text h1 {
+                font-size: 0.65rem;
+            }
+
+            nav a {
+                font-size: 0.6rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.35rem;
+            }
+
+            .hero-description {
+                font-size: 0.78rem;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.7rem;
+            }
+
+            .time-value {
+                font-size: 1.5rem;
+                padding: 0.65rem 0.38rem;
+            }
+
+            .submit-button {
+                font-size: 0.85rem;
+                padding: 0.78rem 1.5rem;
+            }
+        }
+
+        /* Very small - hide logo text if needed */
+        @media (max-width: 380px) {
+            .logo-text {
+                display: none;
+            }
+
+            nav a {
+                font-size: 0.58rem;
             }
         }
 
         /* RTL/LTR Support */
         [dir="ltr"] .category-header {
             border-right: 2px solid var(--azm-border);
-            border-left: 6px solid var(--azm-purple);
+            border-left: 4px solid var(--azm-purple);
         }
 
         [dir="ltr"] .category-header::after {
             left: auto;
-            right: 2rem;
+            right: 1.3rem;
         }
 
         [dir="ltr"] .tool-meta {
             border-right: none;
-            border-left: 4px solid var(--azm-purple);
+            border-left: 3px solid var(--azm-purple);
         }
 
         [dir="ltr"] .resource-link:hover,
@@ -1094,12 +1340,14 @@
             transform: translateX(5px);
         }
 
-        [dir="ltr"] .timer-title {
-            flex-direction: row-reverse;
-        }
+        @media (max-width: 768px) {
+            [dir="ltr"] .category-header {
+                padding: 0.85rem 3.2rem 0.85rem 1rem;
+            }
 
-        [dir="rtl"] .timer-title .clock-icon {
-            order: -1;
+            [dir="ltr"] .category-header::after {
+                right: 1rem;
+            }
         }
     </style>
 </head>
@@ -1109,18 +1357,17 @@
     <header>
         <div class="header-inner">
             <div class="logo-section">
-                <img src="logo_azm_-01.svg" alt="شعار عزم السعودية" class="logo-img">
+
                 <div class="logo-text">
                     <h1 id="mainTitle">تحدي عزم 1.0</h1>
-                    <p id="mainSubtitle">Azm Challenge 1.0</p>
                 </div>
             </div>
             <nav id="mainNav">
                 <a href="#intro" class="nav-link active" data-section="intro" id="navIntro">تحدي عزم</a>
-                <a href="#resources-section" class="nav-link" data-section="resources-section" id="navResources">مراجع التحدي</a>
-                <a href="#tools" class="nav-link" data-section="tools" id="navTools">أدوات التحدي</a>
-                <a href="#support" class="nav-link" data-section="support" id="navSupport">للدعم والمساعدة</a>
-                <button class="lang-switcher" onclick="toggleLanguage()" id="langBtn">English</button>
+                <a href="#resources-section" class="nav-link" data-section="resources-section" id="navResources">المراجع</a>
+                <a href="#tools" class="nav-link" data-section="tools" id="navTools">الأدوات</a>
+                <a href="#support" class="nav-link" data-section="support" id="navSupport">الدعم</a>
+                <button class="lang-switcher" onclick="toggleLanguage()" id="langBtn">EN</button>
             </nav>
         </div>
     </header>
@@ -1129,71 +1376,59 @@
     <section class="hero-section" id="intro">
         <div class="hero-inner">
             <div class="hero-content">
-                <div class="hero-badge" id="heroBadge">
-                    <span>🚀</span>
-                    <span id="badgeText">انطلاقة تحدي عزم الأول</span>
-                </div>
                 <h1 id="heroTitle">تحدي عزم 1.0</h1>
                 <p class="hero-description" id="heroDesc">
-                    منافسة ابتكارية داخلية تسعى إلى استكشاف التحديات الحقيقية التي نواجهها، بهدف بناء فهم عميق للمشكلة، تحليلها بشكل احترافي، وربطها بشكل حقيقي باستراتيجية الشركة
+                    منافسة ابتكارية داخلية تسعى إلى استكشاف التحديات الحقيقية التي نواجهها في مجموعة عزم السعودية
                 </p>
-                
-                <div class="hero-goals">
-                    <div class="goal-item">
-                        <span class="goal-icon">🔍</span>
-                        <span class="goal-text" id="goal1">فهم عميق للمشكلة</span>
-                    </div>
-                    <div class="goal-item">
-                        <span class="goal-icon">📊</span>
-                        <span class="goal-text" id="goal2">تحليل احترافي</span>
-                    </div>
-                    <div class="goal-item">
-                        <span class="goal-icon">🎯</span>
-                        <span class="goal-text" id="goal3">ارتباط باستراتيجية عزم</span>
-                    </div>
-                </div>
             </div>
 
             <!-- Timer Section -->
             <div class="timer-section">
                 <div class="timer-box">
-                    <div class="timer-title">
-                        <span class="clock-icon">⏰</span>
-                        <span id="timerTitle">الوقت المتبقي لتقديم التحدي</span>
-                    </div>
-                    <div class="countdown">
-                        <div class="time-unit">
-                            <span class="time-value" id="days">00</span>
-                            <span class="time-label" id="daysLabel">يوم</span>
+                    <div class="timer-content">
+                        <!-- Left: Timer -->
+                        <div class="timer-left">
+                            <div class="timer-title">
+                                <span id="timerTitle">الوقت المتبقي لتقديم التحدي</span>
+                            </div>
+                            <div class="countdown">
+                                <div class="time-unit">
+                                    <span class="time-value" id="days">00</span>
+                                    <span class="time-label" id="daysLabel">يوم</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="hours">00</span>
+                                    <span class="time-label" id="hoursLabel">ساعة</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="minutes">00</span>
+                                    <span class="time-label" id="minutesLabel">دقيقة</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="seconds">00</span>
+                                    <span class="time-label" id="secondsLabel">ثانية</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="time-unit">
-                            <span class="time-value" id="hours">00</span>
-                            <span class="time-label" id="hoursLabel">ساعة</span>
+
+                        <!-- Right: Submit -->
+                        <div class="timer-right">
+                            <div class="submit-info">
+                                <p id="submitText">يمكنك تقديم نموذج التحدي من خلال الضغط هنا:</p>
+                                <a href="https://forms.fillout.com/t/qdASnszkPTus" target="_blank" class="submit-button">
+                                    <span>📝</span>
+                                    <span id="submitBtn">قدّم تحديك الآن</span>
+                                </a>
+                                <div class="prize-badge">
+                                    <span>🏆</span>
+                                    <span id="prizeText">جائزة الفائز الأول: 10,000 ريال</span>
+                                </div>
+                                <p class="submit-note">
+                                    <span>⚠️</span>
+                                    <span id="submitNote">يجب أن يكون الفريق قد سجّل مسبقاً</span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="time-unit">
-                            <span class="time-value" id="minutes">00</span>
-                            <span class="time-label" id="minutesLabel">دقيقة</span>
-                        </div>
-                        <div class="time-unit">
-                            <span class="time-value" id="seconds">00</span>
-                            <span class="time-label" id="secondsLabel">ثانية</span>
-                        </div>
-                    </div>
-                    
-                    <div class="submit-info">
-                        <p id="submitText">يمكنك تقديم نموذج التحدي من خلال الضغط هنا:</p>
-                        <a href="https://forms.fillout.com/t/qdASnszkPTus" target="_blank" class="submit-button">
-                            <span>📝</span>
-                            <span id="submitBtn">قدّم تحديك الآن</span>
-                        </a>
-                        <div class="prize-badge">
-                            <span>🏆</span>
-                            <span id="prizeText">جائزة الفائز الأول: 10,000 ريال</span>
-                        </div>
-                        <p class="submit-note">
-                            <span>⚠️</span>
-                            <span id="submitNote">يجب أن يكون الفريق قد سجّل مسبقاً</span>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -1310,7 +1545,6 @@
                     </div>
                 </div>
                 <div class="tools-grid">
-                    <!-- Tool 1 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1331,7 +1565,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 2 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1349,7 +1582,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 3 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1370,7 +1602,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 4 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1388,7 +1619,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 5 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1427,7 +1657,6 @@
                     </div>
                 </div>
                 <div class="tools-grid">
-                    <!-- Tool 1 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1445,7 +1674,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 2 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1463,7 +1691,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 3 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1499,7 +1726,6 @@
                     </div>
                 </div>
                 <div class="tools-grid">
-                    <!-- Tool 1 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1520,7 +1746,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 2 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1541,7 +1766,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 3 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1562,7 +1786,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 4 -->
                     <div class="tool-card">
                         <div class="tool-header">
                             <div class="tool-icon">📊</div>
@@ -1601,7 +1824,6 @@
                     </div>
                 </div>
                 <div class="tools-grid">
-                    <!-- Tool 1 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1619,7 +1841,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 2 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1637,7 +1858,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 3 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1658,7 +1878,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 4 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1694,7 +1913,6 @@
                     </div>
                 </div>
                 <div class="tools-grid">
-                    <!-- Tool 1 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1712,7 +1930,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 2 -->
                     <div class="tool-card miro">
                         <div class="miro-badge">🟡 Miro Template</div>
                         <div class="tool-header">
@@ -1730,7 +1947,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 3 -->
                     <div class="tool-card">
                         <div class="tool-header">
                             <div class="tool-icon">🚀</div>
@@ -1748,7 +1964,6 @@
                         </div>
                     </div>
 
-                    <!-- Tool 4 -->
                     <div class="tool-card">
                         <div class="tool-header">
                             <div class="tool-icon">🖼️</div>
@@ -1779,14 +1994,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 id="footerTitle1">تحدي عزم 1.0</h3>
-                    <p id="footerDesc">أحد مخرجات مبادرة منظومة عزم الابتكارية، التي تهدف لتعزيز ثقافة الابتكار وحل المشكلات وبناء القدرات الداخلية لدى مجموعة عزم السعودية</p>
+                    <p id="footerDesc">أحد مخرجات عزم الابتكار، التي تهدف لتعزيز ثقافة الابتكار وحل المشكلات وبناء القدرات الداخلية لدى مجموعة عزم السعودية</p>
                 </div>
                 <div class="footer-section">
                     <h3 id="footerTitle2">للدعم والمساعدة</h3>
                     <ul class="contact-list">
-                        <li>📧 <a href="mailto:Zain.alsamal@azm.sa">Zain.alsamal@azm.sa</a></li>
-                        <li>📧 <a href="mailto:lama.alshudayyid@azm.sa">lama.alshudayyid@azm.sa</a></li>
                         <li>📧 <a href="mailto:shaikah.alaraij@azm.sa">shaikah.alaraij@azm.sa</a></li>
+                        <li>📧 <a href="mailto:lama.alshudayyid@azm.sa">lama.alshudayyid@azm.sa</a></li>
+                        <li>📧 <a href="mailto:zain.alsamal@azm.sa">zain.alsamal@azm.sa</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1804,7 +2019,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Active Navigation Tracking
         const sections = document.querySelectorAll('section[id], .resources-section');
         const navLinks = document.querySelectorAll('.nav-link');
@@ -1815,7 +2030,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
+                if (scrollY >= (sectionTop - 150)) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1827,6 +2042,23 @@
                 }
             });
         }
+
+        // Smooth scroll to section with offset - scroll to section start (header of section visible)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
         window.addEventListener('scroll', updateActiveNav);
         window.addEventListener('load', updateActiveNav);
@@ -1864,7 +2096,6 @@
             const grid = header.nextElementSibling;
             const isActive = header.classList.contains('active');
             
-            // Close all other categories
             document.querySelectorAll('.category-header').forEach(h => {
                 if (h !== header) {
                     h.classList.remove('active');
@@ -1872,7 +2103,6 @@
                 }
             });
 
-            // Toggle current category
             if (isActive) {
                 header.classList.remove('active');
                 grid.classList.remove('active');
@@ -1886,18 +2116,13 @@
         const translations = {
             ar: {
                 mainTitle: "تحدي عزم 1.0",
-                mainSubtitle: "Azm Challenge 1.0",
                 navIntro: "تحدي عزم",
-                navResources: "مراجع التحدي",
-                navTools: "أدوات التحدي",
-                navSupport: "للدعم والمساعدة",
-                langBtn: "English",
-                badgeText: "انطلاقة تحدي عزم الأول",
+                navResources: "المراجع",
+                navTools: "الأدوات",
+                navSupport: "الدعم",
+                langBtn: "EN",
                 heroTitle: "تحدي عزم 1.0",
-                heroDesc: "منافسة ابتكارية داخلية تسعى إلى استكشاف التحديات الحقيقية التي نواجهها، بهدف بناء فهم عميق للمشكلة، تحليلها بشكل احترافي، وربطها بشكل حقيقي باستراتيجية الشركة",
-                goal1: "فهم عميق للمشكلة",
-                goal2: "تحليل احترافي",
-                goal3: "ارتباط باستراتيجية عزم",
+                heroDesc: "منافسة ابتكارية داخلية تسعى إلى استكشاف التحديات الحقيقية التي نواجهها في مجموعة عزم السعودية",
                 timerTitle: "الوقت المتبقي لتقديم التحدي",
                 daysLabel: "يوم",
                 hoursLabel: "ساعة",
@@ -1940,7 +2165,7 @@
                 cat5Title: "بناء الحل المقترح",
                 cat5Desc: "من الفكرة إلى الحل الواضح والقابل للتنفيذ",
                 footerTitle1: "تحدي عزم 1.0",
-                footerDesc: "أحد مخرجات مبادرة منظومة عزم الابتكارية، التي تهدف لتعزيز ثقافة الابتكار وحل المشكلات وبناء القدرات الداخلية لدى مجموعة عزم السعودية",
+                footerDesc: "أحد مخرجات عزم الابتكار، التي تهدف لتعزيز ثقافة الابتكار وحل المشكلات وبناء القدرات الداخلية لدى مجموعة عزم السعودية",
                 footerTitle2: "للدعم والمساعدة",
                 footerTitle3: "روابط مهمة",
                 footerLink1: "📝 نموذج التسجيل",
@@ -1950,18 +2175,13 @@
             },
             en: {
                 mainTitle: "Azm Challenge 1.0",
-                mainSubtitle: "تحدي عزم 1.0",
-                navIntro: "The Challenge",
-                navResources: "Challenge References",
-                navTools: "Challenge Tools",
-                navSupport: "Support & Help",
-                langBtn: "العربية",
-                badgeText: "Launch of Azm's First Challenge",
+                navIntro: "Challenge",
+                navResources: "References",
+                navTools: "Tools",
+                navSupport: "Support",
+                langBtn: "AR",
                 heroTitle: "Azm Challenge 1.0",
-                heroDesc: "An internal innovation competition aimed at exploring the real challenges we face, building deep understanding of problems, analyzing them professionally, and connecting them to the company's strategy",
-                goal1: "Deep Problem Understanding",
-                goal2: "Professional Analysis",
-                goal3: "Linked to Azm Strategy",
+                heroDesc: "An internal innovation competition aimed at exploring the real challenges we face within Saudi Azm Group",
                 timerTitle: "Time Remaining to Submit Challenge",
                 daysLabel: "Days",
                 hoursLabel: "Hours",
@@ -1977,38 +2197,38 @@
                 noticeStep3: "3. Submit the challenge",
                 registerBtn: "Register Now",
                 resourcesTitle: "Essential References",
-                resourcesDesc: "Important documents to understand the challenge and participate effectively",
+                resourcesDesc: "Important documents to understand and participate effectively",
                 res1Title: "Terms and Conditions",
-                res1Desc: "Participation requirements and challenge policies",
+                res1Desc: "Participation requirements",
                 res1Link: "View",
                 res2Title: "Azm Strategy",
-                res2Desc: "Azm's strategic vision and goals",
+                res2Desc: "Strategic vision and goals",
                 res2Link: "View",
                 res3Title: "Submission Guide",
-                res3Desc: "Final challenge submission guide",
+                res3Desc: "Challenge submission guide",
                 res3Link: "View",
                 res4Title: "Judging Criteria",
-                res4Desc: "Submission evaluation criteria",
+                res4Desc: "Evaluation criteria",
                 res4Link: "View",
                 toolsTitle: "Challenge Tools & Resources",
-                toolsDesc: "Comprehensive set of tools and templates to help you submit a professional and outstanding challenge",
+                toolsDesc: "Comprehensive tools and templates for a professional submission",
                 noticeTools: "Click on any category below to explore available tools and templates",
                 cat1Title: "Problem Formulation",
-                cat1Desc: "Tools to describe current state, desired state, and clearly define the gap",
+                cat1Desc: "Tools to describe current state, desired state, and define the gap",
                 cat2Title: "Context & Environment",
-                cat2Desc: "Tools to understand the complete context: systems, regulations, stakeholders",
+                cat2Desc: "Tools to understand systems, regulations, and stakeholders",
                 cat3Title: "Root Cause Analysis",
-                cat3Desc: "8 professional methods — choose the most suitable for your problem",
+                cat3Desc: "8 professional methods for your problem type",
                 cat4Title: "Impact Measurement",
-                cat4Desc: "Tools to measure problem impact with numbers and facts",
+                cat4Desc: "Tools to measure problem impact with data",
                 cat5Title: "Solution Building",
-                cat5Desc: "From idea to clear and executable solution",
+                cat5Desc: "From idea to executable solution",
                 footerTitle1: "Azm Challenge 1.0",
-                footerDesc: "One of the outcomes of Azm's Innovation Ecosystem Initiative, which aims to promote innovation culture, problem-solving, and build internal capabilities within Azm Group Saudi Arabia",
+                footerDesc: "An outcome of Azm Innovation, promoting innovation culture, problem-solving, and building internal capabilities within Azm Group Saudi Arabia",
                 footerTitle2: "Support & Help",
                 footerTitle3: "Important Links",
                 footerLink1: "📝 Registration Form",
-                footerLink2: "📋 Challenge Submission Form",
+                footerLink2: "📋 Submission Form",
                 footerLink3: "↑ Back to Top",
                 copyright: "© 2026 Saudi Azm. All rights reserved."
             }
@@ -2018,17 +2238,24 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            const body = document.body;
-            body.setAttribute('lang', currentLang);
-            body.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            const t = translations[currentLang];
 
-            Object.keys(translations[currentLang]).forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.textContent = translations[currentLang][key];
-                }
+            // Update body direction
+            document.body.lang = currentLang;
+            document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update all translatable elements
+            Object.keys(t).forEach(key => {
+                const el = document.getElementById(key);
+                if (el) el.textContent = t[key];
             });
+
+            // Update header title to show only the current language title
+            document.getElementById('mainTitle').textContent = t.mainTitle;
         }
+
     </script>
 </body>
 </html>
