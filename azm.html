@@ -1412,6 +1412,10 @@
                         </div>
 
                         <!-- Right: Submit -->
+                        <div id="expiredMessage" style="display:none; text-align:center; width:100%; padding:1.5rem; background:linear-gradient(135deg, #F59E0B22, #F59E0B11); border-radius:12px; border:2px solid #F59E0B;">
+                            <p style="font-size:1.4rem; font-weight:700; color:#3D1A6E; margin-bottom:0.5rem;">🏁 تم إنهاء فترة التقديم</p>
+                            <p style="font-size:1.1rem; color:#5C2E91;">انتظروا الفائزين! 🏆</p>
+                        </div>
                         <div class="timer-right">
                             <div class="submit-info">
                                 <p id="submitText">يمكنك تقديم نموذج التحدي من خلال الضغط هنا:</p>
@@ -1999,9 +2003,9 @@
                 <div class="footer-section">
                     <h3 id="footerTitle2">للدعم والمساعدة</h3>
                     <ul class="contact-list">
-                        <li>📧 <a href="mailto:shaikah.alaraij@azm.sa">shaikah.alaraij@azm.sa</a></li>
-                        <li>📧 <a href="mailto:lama.alshudayyid@azm.sa">lama.alshudayyid@azm.sa</a></li>
-                        <li>📧 <a href="mailto:zain.alsamal@azm.sa">zain.alsamal@azm.sa</a></li>
+                        <li>📧 <a href="/cdn-cgi/l/email-protection#94e7fcf5fdfff5fcbaf5f8f5e6f5fdfed4f5eef9bae7f5"><span class="__cf_email__" data-cfemail="a1d2c9c0c8cac0c98fc0cdc0d3c0c8cbe1c0dbcc8fd2c0">[email&#160;protected]</span></a></li>
+                        <li>📧 <a href="/cdn-cgi/l/email-protection#8fe3eee2eea1eee3fce7faebeef6f6e6ebcfeef5e2a1fcee"><span class="__cf_email__" data-cfemail="e08c818d81ce818c938895848199998984a0819a8dce9381">[email&#160;protected]</span></a></li>
+                        <li>📧 <a href="/cdn-cgi/l/email-protection#1e647f7770307f726d7f737f725e7f6473306d7f"><span class="__cf_email__" data-cfemail="c0baa1a9aeeea1acb3a1ada1ac80a1baadeeb3a1">[email&#160;protected]</span></a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -2019,7 +2023,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Active Navigation Tracking
         const sections = document.querySelectorAll('section[id], .resources-section');
         const navLinks = document.querySelectorAll('.nav-link');
@@ -2065,7 +2069,7 @@
 
         // Countdown Timer
         function updateCountdown() {
-            const deadline = new Date('2026-02-28T23:59:59').getTime();
+            const deadline = new Date('2026-03-01T02:30:00+03:00').getTime();
             const now = new Date().getTime();
             const distance = deadline - now;
 
@@ -2074,6 +2078,11 @@
                 document.getElementById('hours').textContent = "00";
                 document.getElementById('minutes').textContent = "00";
                 document.getElementById('seconds').textContent = "00";
+                document.getElementById('timerTitle').textContent = "تم إنهاء فترة التقديم";
+                const expiredMsg = document.getElementById('expiredMessage');
+                if (expiredMsg) expiredMsg.style.display = 'block';
+                const timerRight = document.querySelector('.timer-right');
+                if (timerRight) timerRight.style.display = 'none';
                 return;
             }
 
@@ -2243,19 +2252,14 @@
             // Update body direction
             document.body.lang = currentLang;
             document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = currentLang;
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
-            // Update all translatable elements
-            Object.keys(t).forEach(key => {
-                const el = document.getElementById(key);
-                if (el) el.textContent = t[key];
+            Object.keys(translations[currentLang]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[currentLang][key];
+                }
             });
-
-            // Update header title to show only the current language title
-            document.getElementById('mainTitle').textContent = t.mainTitle;
         }
-
     </script>
 </body>
 </html>
